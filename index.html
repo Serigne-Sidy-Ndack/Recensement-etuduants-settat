@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Formulaire de recensement</title>
+<style>
+    /* Styles CSS */
+    .form-container {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .form-group input[type="text"], 
+    .form-group input[type="email"],
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Recensement des étudiants Sénégalais de Settat</h2>
+    <form action="traitement.php" method="post">
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="ville">Ville :</label>
+            <select id="ville" name="ville" required>
+                <option value="Settat">Settat</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="matricule_amci">Matricule AMCI :</label>
+            <input type="text" id="matricule_amci" name="matricule_amci" pattern="\d{8}" required>
+            <small>Le matricule doit contenir 8 chiffres.</small>
+        </div>
+        
+        <div class="form-group">
+            <input type="submit" value="Envoyer">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
